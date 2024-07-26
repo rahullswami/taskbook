@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="testbook-logo.png">
+</head>
+<body>
+
+    <!-- main page  -->
+
+    <div id="home-page" class="home_page ">
+        <div class="user-details" id="user_details">
+            <img src="testbook-logo.png" alt="Logo" class="logo">
+            <h1>Hello user!</h1>
+            <p><b>Enter your name to continue the Quiz.</b></p>
+            <div class="input_fild">
+                <input type="text" id="username" placeholder="Enter your name" class="username">
+            <button onclick="startQuiz()">Enter</button>
+            </div>
+        </div>
+        <div class="time_details">
+            <p>You'll have 10 seconds to answer each qustions</p>
+        </div>
+        <div class="category-section">
+            <div class="select_category_heading">
+                <h1>Select Category</h1>
+            </div>
+           <div class="all_button">
+            <button onclick="selectCategory('pipes')">Pipes and Cisterns</button>
+            <button onclick="selectCategory('probability')">Probability</button>
+            <button onclick="selectCategory('age')">Problems on Age</button>
+            <button onclick="selectCategory('profit')">Profit and Loss</button>
+           </div>
+        </div>
+    </div>
+
+
+    <!-- quiz page  -->
+
+    <div id="quiz-page" class="hidden">
+        <div class="header">
+            <div id="timer"><b>00:00</b></div>
+            <div id="score">Score: 0</div>
+        </div>
+        <div id="quiz-container-qustions"></div>
+        <!-- <div id="quiz-button-container"></div> -->
+        <button onclick="nextQuestion()">Next Question</button>
+    </div>
+
+
+    <!-- result page  -->
+
+    <div id="result-page" class="hidden">
+        <h1>Quiz Results</h1>
+        <p>Name: <span id="result-name"></span></p>
+        <p>Total Time: <span id="result-time"></span></p>
+        <p>Total Questions: <span id="total-questions"></span></p>
+        <p>Attempted Questions: <span id="attempted-questions"></span></p>
+        <p>Correct Questions: <span id="correct-questions"></span></p>
+        <p>Wrong Questions: <span id="wrong-questions"></span></p>
+        <p>Score: <span id="result-score"></span>%</p>
+        <button onclick="startAgain()">Start Again</button>
+        <button onclick="goHome()">Go to Home</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
